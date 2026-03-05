@@ -701,6 +701,28 @@
             font-weight: 600;
         }
 
+        /* Clickable certificate link styling */
+        a[href*="certificates"] {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        a[href*="certificates"] .achievement-card {
+            cursor: pointer;
+            border-left-color: var(--accent);
+        }
+
+        a[href*="certificates"] .achievement-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 70px rgba(240, 147, 251, 0.5);
+            border-left-color: var(--primary);
+        }
+
+        a[href*="certificates"] .achievement-card:active {
+            transform: translateY(-10px) scale(1.01);
+        }
+
         /* Contact */
         .contact-info {
             display: grid;
@@ -1094,23 +1116,86 @@
                 <p>Secured second place in the Front End development competition showcasing exceptional UI/UX skills</p>
             </div>
 
-            <div class="achievement-card glass-card scroll-animate">
-                <div class="trophy">📜</div>
-                <h3>Oracle Cloud Infrastructure 2025</h3>
-                <p>Certified in Oracle Cloud Infrastructure, demonstrating expertise in cloud computing and architecture</p>
-            </div>
+            <a href="certificates/python%20essentials%201.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">📜</div>
+                    <h3>Python Essentials 1</h3>
+                    <p>Completed Python programming fundamentals certification covering core concepts and syntax</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
 
-            <div class="achievement-card glass-card scroll-animate">
-                <div class="trophy">📜</div>
-                <h3>Python Essentials (1,2)</h3>
-                <p>Completed comprehensive Python programming certification covering fundamentals and advanced concepts</p>
-            </div>
+            <a href="certificates/python%20essentials%202.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">📜</div>
+                    <h3>Python Essentials 2</h3>
+                    <p>Completed advanced Python programming certification covering OOP, modules, and advanced concepts</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
 
-            <div class="achievement-card glass-card scroll-animate">
-                <div class="trophy">📜</div>
-                <h3>Introduction to IoT</h3>
-                <p>Certified in Internet of Things fundamentals, sensors, and connected device development</p>
-            </div>
+            <a href="certificates/C--_Essentials_1_certificate.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">📜</div>
+                    <h3>C++ Essentials 1</h3>
+                    <p>Certified in C++ programming fundamentals, object-oriented programming, and data structures</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Introduction_to_IoT_certificate.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">📜</div>
+                    <h3>Introduction to IoT</h3>
+                    <p>Certified in Internet of Things fundamentals, sensors, and connected device development</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Introduction_to_Cybersecurity_certificate.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">🔒</div>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p>Certified in cybersecurity fundamentals, threat analysis, and security best practices</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Introduction_to_Data_Science_certificate.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">📊</div>
+                    <h3>Introduction to Data Science</h3>
+                    <p>Certified in data science fundamentals, data analysis, and machine learning basics</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Introduction_to_Modern_AI_certificate.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">🤖</div>
+                    <h3>Introduction to Modern AI</h3>
+                    <p>Certified in modern artificial intelligence concepts, neural networks, and AI applications</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Certificate%20for%20MADHUKANTH%20M%20for%20_IEEE%20-%20EBSCO%20India%20Training..._.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">🎓</div>
+                    <h3>IEEE - EBSCO India Training</h3>
+                    <p>Completed IEEE EBSCO India training program on research databases and academic resources</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
+
+            <a href="certificates/Certificate%20for%20MADHUKANTH%20M%20for%20_IEEE%20Xplore%20Assignment_.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card glass-card scroll-animate">
+                    <div class="trophy">🎓</div>
+                    <h3>IEEE Xplore Assignment</h3>
+                    <p>Completed IEEE Xplore assignment on digital library and research paper exploration</p>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem;">Click to view certificate →</p>
+                </div>
+            </a>
         </div>
     </section>
 
