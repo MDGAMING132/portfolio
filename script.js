@@ -23,11 +23,12 @@ function initCanvasParticles() {
     let animationFrameId;
 
     // Configuration
+    const isMobile = window.innerWidth < 768;
     const config = {
-        particleCount: 80,
-        maxDistance: 120,
-        mouseDistance: 160,
-        particleSpeed: 0.4,
+        particleCount: isMobile ? 25 : 80,
+        maxDistance: isMobile ? 80 : 120,
+        mouseDistance: isMobile ? 0 : 160,
+        particleSpeed: isMobile ? 0.2 : 0.4,
         particleColor: 'rgba(124, 58, 237, 0.25)',  /* Violet primary base */
         lineColor: 'rgba(0, 242, 254, 0.08)',      /* Aqua accent base */
         minSize: 1,
@@ -42,6 +43,7 @@ function initCanvasParticles() {
     };
 
     window.addEventListener('mousemove', (e) => {
+        if (isMobile) return;
         mouse.x = e.clientX;
         mouse.y = e.clientY;
     });
@@ -80,7 +82,7 @@ function initCanvasParticles() {
             if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
 
             // Optional mouse repulsion or attraction
-            if (mouse.x !== null && mouse.y !== null) {
+            if (!isMobile && mouse.x !== null && mouse.y !== null) {
                 const dx = this.x - mouse.x;
                 const dy = this.y - mouse.y;
                 const dist = Math.hypot(dx, dy);
@@ -125,7 +127,7 @@ function initCanvasParticles() {
             const p1 = particles[i];
 
             // Connect to mouse
-            if (mouse.x !== null && mouse.y !== null) {
+            if (!isMobile && mouse.x !== null && mouse.y !== null) {
                 const dxMouse = p1.x - mouse.x;
                 const dyMouse = p1.y - mouse.y;
                 const distMouse = Math.hypot(dxMouse, dyMouse);

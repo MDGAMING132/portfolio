@@ -1289,22 +1289,95 @@ footer {
     }
     
     section {
-        padding: 4.5rem 1.5rem;
+        padding: 4.5rem 1.25rem;
     }
     
     .section-title {
-        font-size: 2.25rem;
+        font-size: 2.2rem;
     }
     
+    /* Hero Section Mobile Polish */
+    .hero {
+        padding-top: 6.5rem;
+    }
+
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        letter-spacing: -1.5px;
     }
-    
-    .projects-grid {
+
+    .hero-text p.description {
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+    }
+
+    /* Flatten 3D window for mobile readability and overflow protection */
+    .code-window {
+        transform: none !important;
+        font-size: 0.75rem;
+        max-width: 100%;
+    }
+
+    .code-body {
+        padding: 1rem;
+    }
+
+    /* Grid layout optimizations */
+    .projects-grid,
+    .skills-container,
+    .achievements-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-    
+
+    /* Card padding compression to preserve horizontal space */
+    .skills-category,
+    .achievement-card,
     .contact-form-card {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
+    }
+
+    /* Project card mobile spacing */
+    .project-img-wrapper {
+        height: 190px;
+    }
+
+    .project-details {
+        padding: 1.25rem;
+    }
+
+    .project-features {
+        margin-bottom: 1.25rem;
+    }
+
+    /* Compact vertical timeline */
+    .timeline-container {
+        padding-left: 2rem;
+    }
+
+    .timeline-node {
+        left: -43px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .timeline-card {
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-role {
+        font-size: 1.15rem;
+    }
+
+    /* Button sizing and flex alignments */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-detail-card {
+        padding: 1rem 1.25rem;
     }
 }
