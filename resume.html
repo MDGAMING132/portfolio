@@ -286,11 +286,18 @@
         /* -------------------------------------------------------------
          * PRINT STYLE SHEET OVERRIDES
          * ------------------------------------------------------------- */
+        @page {
+            size: A4;
+            margin: 1.2cm 1.5cm;
+        }
+
         @media print {
             body {
                 background-color: #ffffff;
                 padding: 0;
                 color: #000000;
+                font-size: 9.5pt;
+                line-height: 1.35;
             }
 
             .actions-bar,
@@ -308,15 +315,60 @@
 
             header {
                 border-bottom-color: #000000;
+                padding-bottom: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            header h1 {
+                font-size: 22pt;
+                margin-bottom: 0.25rem;
             }
 
             .role-title {
                 color: #000000;
+                font-size: 11pt;
+                margin-bottom: 0.4rem;
+            }
+
+            .contact-details {
+                font-size: 8.5pt;
+                gap: 8px;
+            }
+
+            section {
+                margin-bottom: 1rem;
             }
 
             .section-title {
                 color: #000000;
                 border-bottom-color: #000000;
+                font-size: 11pt;
+                margin-bottom: 0.6rem;
+                padding-bottom: 0.25rem;
+            }
+
+            .summary p {
+                font-size: 9.5pt;
+            }
+
+            .skills-row {
+                font-size: 9pt;
+                grid-template-columns: 140px 1fr;
+            }
+
+            .item-block {
+                margin-bottom: 0.75rem;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .item-title {
+                font-size: 9.5pt;
+            }
+
+            .bullet-list li {
+                font-size: 9pt;
+                margin-bottom: 0.2rem;
             }
 
             .bullet-list li::before {
@@ -325,6 +377,11 @@
 
             .project-links a {
                 color: #000000;
+            }
+
+            .education-section {
+                page-break-after: always;
+                break-after: page;
             }
         }
     </style>
@@ -392,7 +449,7 @@
         </section>
 
         <!-- Education -->
-        <section>
+        <section class="education-section">
             <h2 class="section-title">Education</h2>
             
             <div class="item-block">
