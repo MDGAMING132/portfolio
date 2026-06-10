@@ -320,20 +320,50 @@ function initContactForm() {
             return;
         }
 
-        // 2. Submit loading feedback simulation
+        // 2. Submit loading state
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Message...';
 
-        setTimeout(() => {
-            // Success state reset
-            showToast('Message sent successfully! Madhukanth will get back to you soon.', 'success');
-            form.reset();
-            if (messageInput) messageInput.style.height = 'auto';
+        const formData = new FormData(form);
+        const accessKey = formData.get('access_key');
+
+        // Check if user has replaced the key placeholder
+        if (!accessKey || accessKey.trim() === '' || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+            // Simulated Mode Fallback
+            setTimeout(() => {
+                showToast('Message sent successfully! (Demo Mode: Add access key in index.html to receive emails)', 'success');
+                form.reset();
+                if (messageInput) messageInput.style.height = 'auto';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 1200);
+            return;
+        }
+
+        // Real Submission Mode
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showToast('Message sent successfully! Madhukanth will get back to you soon.', 'success');
+                form.reset();
+                if (messageInput) messageInput.style.height = 'auto';
+            } else {
+                showToast(data.message || 'Something went wrong. Please try again.', 'warning');
+            }
+        })
+        .catch(error => {
+            showToast('Network error. Please check your internet connection.', 'warning');
+        })
+        .finally(() => {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalText;
-        }, 1200);
+        });
     });
 
     function validateEmail(email) {
