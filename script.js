@@ -343,9 +343,16 @@ function initContactForm() {
         }
 
         // Real Submission Mode
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
         })
         .then(response => response.json())
         .then(data => {
